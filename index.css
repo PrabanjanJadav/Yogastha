@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  background-color: lightyellow;
+  margin: 0;
+}
+footer{
+    background-color: yellow;
+}
+header{
+    background-color: #F4C430;
+    nav{
+        a{text-decoration: none;
+        };
+        a:link{
+            color:aliceblue;
+        }
+        a:hover{
+            background-color: gold;
+        }
+    }
+}
+footer{
+  height: 70px;
+  img {
+  width: 30px;
+  height: auto; 
+}}
+.square-box {
+  width: 20%;              /* control how wide you want it */
+  margin: 40px auto;       /* auto centers horizontally */
+  text-align: center;
+  border: 2px solid black;
+  padding: 20px;
+}
+#timer{
+    text-align: end;
+    font-size: larger;
+    color: green;
+}
+/* ===============================
+   BREATH PLANT SECTION
+================================ */
+
+.breath-section {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #eaf7ea, #ffffff);
+  transition: background 2s ease;
+}
+
+.breath-container {
+  text-align: center;
+}
+
+.breath-plant {
+  width: 260px;
+  height: 360px;
+}
+
+/* Thick yellow roots */
+.breath-root {
+  stroke: #d4af37;
+  stroke-width: 6;
+  fill: none;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Hair roots */
+.breath-hair {
+  stroke: #e6c65c;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Stem */
+#breath-stem {
+  stroke: #2f8f2f;
+  stroke-width: 8;
+  fill: none;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Leaves */
+.breath-leaf {
+  fill: green;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Flower */
+.breath-petal {
+  fill: hotpink;
+  opacity: 0;
+  transform-origin: 100px 140px;
+  transform: scale(0);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.breath-btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  border-radius: 40px;
+  border: none;
+  background: #2e8b57;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.breath-btn.active {
+  box-shadow: 0 0 35px #00ff88;
+  transform: scale(1.1);
+}
+/* ===============================
+   HORIZONTAL POSTER SCROLL
+================================ */
+
+.poster-section {
+  padding: 60px 40px;
+}
+
+.section-title {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* Horizontal scroll container */
+.poster-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  margin-left: 30%;
+}
+
+/* Hide scrollbar (optional) */
+.poster-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.poster-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* Individual card */
+.poster-card {
+  
+  min-width: 250px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Image */
+.poster-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Info */
+.poster-info {
+  padding: 15px;
+}
+
+/* Hover effect */
+.poster-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+/* ===============================
+   TABLE SECTION
+================================ */
+
+.table-section {
+  padding: 60px 40px;
+}
+
+.calendar-header {
+  margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* TABLE */
+
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.event-table th {
+  background: #f2f2f2;
+  padding: 12px;
+  border-bottom: 2px solid #ccc;
+}
+
+.event-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.event-table tr:hover {
+  background: #fafafa;
+}
+
+/* Calendar Button */
+
+.mini-calendar-btn {
+  padding: 6px 14px;
+  background: #34a853;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mini-calendar-btn:hover {
+  background: #2b8c44;
+}
+
+/* VENUE BADGES */
+
+.venue-online {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.venue-offline {
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.venue-offline:hover {
+  background: #bbdefb;
+}
