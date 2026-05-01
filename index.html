@@ -144,7 +144,7 @@
             <span>Morning Practice</span>
             <h3>Common Yoga Protocol</h3>
             <p>Begin the day with a steady campus practice for all experience levels.</p>
-            <a class="card-register" href="#">Registration link coming soon</a>
+            <a class="card-register" href="#">Registration opening soon</a>
           </div>
         </article>
 
@@ -156,7 +156,7 @@
             <span>Workshop</span>
             <h3>Breath & Balance</h3>
             <p>Simple pranayama techniques for focus, energy, and calm.</p>
-            <a class="card-register" href="#">Registration link coming soon</a>
+            <a class="card-register" href="#">Registration opening soon</a>
           </div>
         </article>
 
@@ -168,7 +168,7 @@
             <span>Evening</span>
             <h3>Mindfulness Circle</h3>
             <p>A guided wind-down session built around reflection and stillness.</p>
-            <a class="card-register" href="#">Registration link coming soon</a>
+            <a class="card-register" href="#">Registration opening soon</a>
           </div>
         </article>
       </div>
@@ -186,21 +186,21 @@
           <div class="mini-poster-placeholder">Poster</div>
           <h3>T-Shirt Design Competition</h3>
           <p>Submit an original IDY-inspired design for the 2026 celebration.</p>
-          <a class="register-link" href="#">Add registration link</a>
+          <a class="register-link" href="#">Registration link pending</a>
         </article>
         <article class="compact-card">
           <span class="pill">Quiz</span>
           <div class="mini-poster-placeholder">Poster</div>
           <h3>Yoga Quiz</h3>
           <p>Daily questions on yoga, wellness, history, and mindful living.</p>
-          <a class="register-link" href="#">Add registration link</a>
+          <a class="register-link" href="#">Registration link pending</a>
         </article>
         <article class="compact-card">
           <span class="pill">Performance</span>
           <div class="mini-poster-placeholder">Poster</div>
           <h3>Asana Challenge</h3>
           <p>A friendly showcase of posture, balance, discipline, and grace.</p>
-          <a class="register-link" href="#">Add registration link</a>
+          <a class="register-link" href="#">Registration link pending</a>
         </article>
       </div>
     </section>
@@ -220,8 +220,6 @@
               <th>Date</th>
               <th>Time</th>
               <th>Venue</th>
-              <th>Poster</th>
-              <th>Register</th>
               <th>Add</th>
             </tr>
           </thead>
@@ -232,8 +230,6 @@
               <td>02 May 2026</td>
               <td>7:00 PM - 8:15 PM</td>
               <td><button class="venue-badge offline" onclick="openMap('Yoga Hall, New SAC IIT Bombay')">Yoga Hall, New SAC</button></td>
-              <td><a class="poster-link" href="#">Poster</a></td>
-              <td><a class="register-link compact" href="#">Register</a></td>
               <td><button class="mini-calendar-btn" onclick="addToCalendar('Yoga for Brain','Yoga Hall, New SAC IIT Bombay','20260502T190000','20260502T201500')">Add</button></td>
             </tr>
             <tr>
@@ -242,8 +238,6 @@
               <td>09 May 2026</td>
               <td>7:15 PM - 8:00 PM</td>
               <td><span class="venue-badge online">Online</span></td>
-              <td><a class="poster-link" href="#">Poster</a></td>
-              <td><a class="register-link compact" href="#">Register</a></td>
               <td><button class="mini-calendar-btn" onclick="addToCalendar('Breath Workshop','Online','20260509T191500','20260509T200000')">Add</button></td>
             </tr>
             <tr>
@@ -252,8 +246,6 @@
               <td>21 June 2026</td>
               <td>6:30 AM - 8:30 AM</td>
               <td><button class="venue-badge offline" onclick="openMap('IIT Bombay')">IIT Bombay</button></td>
-              <td><a class="poster-link" href="#">Poster</a></td>
-              <td><a class="register-link compact" href="#">Register</a></td>
               <td><button class="mini-calendar-btn" onclick="addToCalendar('Main IDY Celebration','IIT Bombay','20260621T063000','20260621T083000')">Add</button></td>
             </tr>
           </tbody>
@@ -276,8 +268,6 @@
               <th>Date</th>
               <th>Deadline</th>
               <th>Venue</th>
-              <th>Poster</th>
-              <th>Register</th>
               <th>Add</th>
             </tr>
           </thead>
@@ -288,8 +278,6 @@
               <td>19-24 May 2026</td>
               <td>26 May 2026, 11:59 PM</td>
               <td><span class="venue-badge online">Online</span></td>
-              <td><a class="poster-link" href="#">Poster</a></td>
-              <td><a class="register-link compact" href="#">Register</a></td>
               <td><button class="mini-calendar-btn" onclick="addToCalendar('T-Shirt Design Competition','Online Submission','20260526T235900','20260526T235900')">Add</button></td>
             </tr>
             <tr>
@@ -298,8 +286,6 @@
               <td>04-07 June 2026</td>
               <td>10:00 PM each day</td>
               <td><button class="venue-badge offline" onclick="openMap('IIT Bombay Campus')">IIT Bombay Campus</button></td>
-              <td><a class="poster-link" href="#">Poster</a></td>
-              <td><a class="register-link compact" href="#">Register</a></td>
               <td><button class="mini-calendar-btn" onclick="addToCalendar('Yoga Quiz','IIT Bombay Campus','20260604T220000','20260607T220000')">Add</button></td>
             </tr>
           </tbody>
@@ -421,6 +407,10 @@
     function openMap(location) {
       window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location)}`, "_blank");
     }
+
+    document.querySelectorAll('a[href="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => event.preventDefault());
+    });
 
     const breathCycle = [
       { label: "Inhale", duration: 4, scale: 1.12, hint: "Draw the breath in slowly" },

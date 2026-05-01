@@ -28,6 +28,20 @@ body {
   font-family: "Manrope", Arial, sans-serif;
 }
 
+::selection {
+  background: rgba(199, 146, 43, 0.28);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(214, 106, 74, 0.55);
+  outline-offset: 4px;
+}
+
+section,
+footer {
+  scroll-margin-top: 92px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -463,16 +477,34 @@ h2 {
 }
 
 .poster-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr;
+  display: flex;
   gap: 18px;
+  overflow-x: auto;
+  padding: 4px 4px 22px;
+  scroll-snap-type: x proximity;
+  scrollbar-color: rgba(35, 92, 58, 0.38) transparent;
+}
+
+.poster-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.poster-grid::-webkit-scrollbar-thumb {
+  background: rgba(35, 92, 58, 0.34);
+  border-radius: 999px;
 }
 
 .poster-card {
+  flex: 0 0 min(420px, 84vw);
   min-height: 420px;
   overflow: hidden;
   position: relative;
   isolation: isolate;
+  scroll-snap-align: start;
+}
+
+.poster-card.large {
+  flex-basis: min(560px, 88vw);
 }
 
 .poster-placeholder {
@@ -628,7 +660,7 @@ h2 {
 
 .event-table {
   width: 100%;
-  min-width: 980px;
+  min-width: 720px;
   border-collapse: collapse;
 }
 
@@ -696,7 +728,6 @@ button.venue-badge {
   padding: 8px 14px;
 }
 
-.poster-link,
 .register-link {
   display: inline-flex;
   align-items: center;
@@ -711,24 +742,17 @@ button.venue-badge {
   transition: transform 180ms ease, background 180ms ease;
 }
 
-.poster-link {
-  border: 1px dashed rgba(35, 92, 58, 0.28);
-  background: #f6f0df;
-  color: var(--leaf);
-}
-
 .register-link {
   border: 1px solid rgba(199, 146, 43, 0.34);
   background: #fff4da;
   color: #7a5211;
 }
 
-.register-link:not(.compact) {
+.register-link {
   align-self: flex-start;
   margin-top: auto;
 }
 
-.poster-link:hover,
 .register-link:hover {
   transform: translateY(-2px);
 }
@@ -1003,7 +1027,6 @@ button.venue-badge {
     justify-self: stretch;
   }
 
-  .poster-grid,
   .compact-card-grid {
     grid-template-columns: 1fr;
   }
